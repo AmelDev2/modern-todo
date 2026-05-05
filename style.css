@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1f2a44, #4e54c8);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  margin-top: 3rem;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* الكرت الرئيسي */
+.main {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-top: 3rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+/* input + button */
+.center {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#todoInput {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+#todoInput:focus {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+#todoInput::placeholder {
+  color: #ddd;
+  font-weight: bold;
+}
+
+#addBtn {
+  padding: 12px;
+  border-radius: 10px;
+  background: #0f172a;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+}
+
+#addBtn:hover {
+  background: white;
+  color: black;
+}
+
+/* قائمة المهام */
+#tasksList {
+  margin-top: 15px;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 5px;
+}
+
+/* تخصيص السكروول بار */
+#tasksList::-webkit-scrollbar {
+  width: 20px;
+}
+
+#tasksList::-webkit-scrollbar-track {
+  background: rgba(164, 230, 150, 0.05);
+  border-radius: 10px;
+}
+
+#tasksList::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+#tasksList::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  color: royalblue;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: 0.2s;
+  background: rgba(255, 255, 255, 0.9); /* أبيض بلمسة شفافة */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  backface-visibility: hidden; /* يمنع الرعشة في المتصفحات */
+  will-change: transform; /* يخبر المتصفح أن العنصر سيتحرك لتحسين الأداء */
+}
+
+li:hover {
+  transform: scale(1.01);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* أضف ظل بدل التكبير الزائد */
+}
+
+li span {
+  font-weight: bold;
+}
+
+.control {
+  display: flex;
+  gap: 10px;
+}
+
+.control button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+.control button:nth-child(2) {
+  color: purple;
+  font-weight: bold;
+}
+
+.control button:nth-child(3) {
+  color: red;
+  font-weight: bold;
+}
+/* الأزرار السفلية */
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.buttons button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  background: #0f172a;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+  font-weight: bold;
+}
+
+.buttons button:hover {
+  background: white;
+  color: black;
+}
+
+/* العداد */
+p {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* 📱 ريسبونسف */
+@media (max-width: 500px) {
+  .center {
+    flex-direction: column;
+  }
+
+  #addBtn {
+    width: 100%;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+}
